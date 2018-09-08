@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using WebAspNetCore.Models;
+using WebAspNetCore.Models.ViewModels;
 
 namespace WebAspNetCore.Controllers
 {
@@ -25,7 +25,7 @@ namespace WebAspNetCore.Controllers
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
-
+            ViewData["Email"] = "pauloariell@live.com";
             return View();
         }
 
