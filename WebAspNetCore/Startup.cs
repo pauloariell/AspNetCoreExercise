@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using WebAspNetCore.Models;
+using WebAspNetCore.Data;
 
 namespace WebAspNetCore
 {
@@ -39,6 +40,7 @@ namespace WebAspNetCore
             services.AddDbContext<WebAspNetCoreContext>(options =>
                     options.UseMySql(Configuration.GetConnectionString("WebAspNetCoreContext"), builder =>
                         builder.MigrationsAssembly("WebAspNetCore")));
+            services.AddScoped<SeedingService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
